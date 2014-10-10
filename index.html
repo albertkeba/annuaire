@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Annuaire</title>
+</head>
+<body>
+
+	<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="vendors/underscore-min.js"></script>
+	<script type="text/javascript" src="vendors/backbone-min.js"></script>
+	<script type="text/javascript" src="vendors/mustache.js"></script>
+	<script type="text/javascript" src="vendors/underscore-min.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/utils.js"></script>
+	<script type="text/javascript" src="scripts/models/contact.js"></script>
+	<script type="text/javascript" src="scripts/collections/contacts.js"></script>
+	<script type="text/javascript" src="scripts/views/viewport.js"></script>
+	<script type="text/javascript" src="scripts/router.js"></script>
+	<script>
+		(function(){
+			$(document).ready(function(){
+				app.utils.templateLoader.load([], function () {
+					new app.router();
+					Backbone.history.start();
+				});
+			});
+		})(jQuery);
+	</script>
+</body>
+</html>

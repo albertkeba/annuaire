@@ -1,4 +1,6 @@
 app.utils = {
+	debug: true,
+	serviceUrl: 'http://localhost/service/',
 	templateLoader: {
 		templates: {},
 		load: function ( names, callback ) {
