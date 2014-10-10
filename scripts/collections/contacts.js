@@ -5,5 +5,9 @@ app.collections.contacts = Backbone.Collection.extend({
 		if ( app.utils.debug )
 			console.log('initialize app.collections.contacts');
 
+		this.on('add', this.add, this);
+	},
+	add: function(){
+		console.log('add');
 	}
 });

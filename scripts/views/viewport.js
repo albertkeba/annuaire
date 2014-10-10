@@ -7,11 +7,16 @@ app.views.viewport = Backbone.View.extend({
 
 		this.on('ready', this.show, this);
 
-		var self = this;
-		new app.collections.contacts().fetch({
+		var self = this,
+			contactsCollection = new app.collections.contacts();
+
+			contactsCollection.off('add');
+
+		contactsCollection.fetch({
 			success: function( models ){
-				app.directory = models;
-				self.trigger('ready');
+				//app.directory = models;
+				//self.trigger('ready');
+				console.log('ready');
 			}
 		});
 	},
@@ -19,5 +24,7 @@ app.views.viewport = Backbone.View.extend({
 		var template = app.utils.templateLoader.get('contacts');
 		Mustache.parse( template );
 		this.$el.html( Mustache.render(template, {contacts: app.directory.toJSON()}) );
+
+		template = null;
 	},
 });
