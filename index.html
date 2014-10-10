@@ -5,14 +5,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Annuaire</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="styles/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="vendors/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
 </head>
 <body>
-
+	<div class="container">
+		<div class="row" id="viewport"></div>
+	</div>
 	<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="vendors/underscore-min.js"></script>
 	<script type="text/javascript" src="vendors/backbone-min.js"></script>
 	<script type="text/javascript" src="vendors/mustache.js"></script>
 	<script type="text/javascript" src="vendors/underscore-min.js"></script>
+	<script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="scripts/app.js"></script>
 	<script type="text/javascript" src="scripts/utils.js"></script>
 	<script type="text/javascript" src="scripts/models/contact.js"></script>
@@ -22,7 +28,7 @@
 	<script>
 		(function(){
 			$(document).ready(function(){
-				app.utils.templateLoader.load([], function () {
+				app.utils.templateLoader.load(['contacts'], function () {
 					new app.router();
 					Backbone.history.start();
 				});
