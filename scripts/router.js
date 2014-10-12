@@ -3,8 +3,7 @@ app.router = Backbone.Router.extend({
 		'': 'index'
 	},
 	initialize: function(){
-		if ( app.utils.debug )
-			console.log('initialize app.router');
+		app.utils.showDebug('initialize app.router');
 	},
 	index: function(){
 		new app.views.viewport();

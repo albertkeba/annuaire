@@ -11,7 +11,9 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row" id="viewport"></div>
+		<div class="row" id="viewport">
+			<div class="col-sm-8" id="contacts"></div>
+		</div>
 	</div>
 	<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="vendors/underscore-min.js"></script>
@@ -23,12 +25,14 @@
 	<script type="text/javascript" src="scripts/utils.js"></script>
 	<script type="text/javascript" src="scripts/models/contact.js"></script>
 	<script type="text/javascript" src="scripts/collections/contacts.js"></script>
+	<script type="text/javascript" src="scripts/views/contact.js"></script>
+	<script type="text/javascript" src="scripts/views/contactslist.js"></script>
 	<script type="text/javascript" src="scripts/views/viewport.js"></script>
 	<script type="text/javascript" src="scripts/router.js"></script>
 	<script>
 		(function(){
 			$(document).ready(function(){
-				app.utils.templateLoader.load(['contacts'], function () {
+				app.utils.templateLoader.load(['contact'], function () {
 					new app.router();
 					Backbone.history.start();
 				});

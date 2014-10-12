@@ -18,5 +18,14 @@ app.utils = {
 		get: function ( name ) { 
 			return this.templates[ name ];
 		}
+	},
+	showDebug: function( log ){
+		if ( app.utils.debug )
+		{
+			if ( typeof console !== 'undefined' || typeof console.log !== 'undefined' )
+			{
+				console.log( log );
+			}
+		}
 	}
 };
