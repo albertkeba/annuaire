@@ -7,5 +7,6 @@ app.router = Backbone.Router.extend({
 	},
 	index: function(){
 		new app.views.viewport();
+		new app.views.form();
 	}
 });

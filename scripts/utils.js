@@ -1,5 +1,4 @@
 app.utils = {
-	debug: true,
 	serviceUrl: 'http://localhost/service/',
 	templateLoader: {
 		templates: {},
@@ -20,7 +19,7 @@ app.utils = {
 		}
 	},
 	showDebug: function( log ){
-		if ( app.utils.debug )
+		if ( app.config.debug )
 		{
 			if ( typeof console !== 'undefined' || typeof console.log !== 'undefined' )
 			{
