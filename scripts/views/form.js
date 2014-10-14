@@ -15,11 +15,23 @@ app.views.form = Backbone.View.extend({
 	},
 	addContact: function(e){
 		e.preventDefault();
-		var data = [];
+		var data = {};
 		this.$el.find('form').serializeArray().map(function( input ){
 			data[input.name] = input.value;
 		});
 
 		//app.directory.add( new app.models.contact(data) );
+		$.ajax({
+			url		: app.utils.serviceUrl + '/addContact',
+			type	: 'POST',
+			data	: JSON.stringify( data ),
+			dataRtpe: 'json',
+			success	: function( result ) {
+				console.log( result );
+			},
+			error	: function( error ){
+				console.log( error );
+			}
+		});
 	}
 });
