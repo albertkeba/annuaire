@@ -20,14 +20,17 @@ app.views.form = Backbone.View.extend({
 			data[input.name] = input.value;
 		});
 
-		//app.directory.add( new app.models.contact(data) );
 		$.ajax({
 			url		: app.utils.serviceUrl + '/addContact',
 			type	: 'POST',
 			data	: JSON.stringify( data ),
-			dataRtpe: 'json',
-			success	: function( result ) {
-				console.log( result );
+			dataType: 'json',
+			success	: function( rs ) {
+				if ( rs.success === 1 )
+				{
+					data.id = rs.id;
+					app.directory.add( new app.models.contact(data) );
+				}
 			},
 			error	: function( error ){
 				console.log( error );
