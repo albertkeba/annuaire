@@ -6,7 +6,7 @@ app.collections.contacts = Backbone.Collection.extend({
 
 		this.on('add', this.add, this);
 	},
-	add: function(){
-		console.log( this.model );
+	add: function( model ){
+		this.trigger('contactAdded');//this.model );
 	}
 });

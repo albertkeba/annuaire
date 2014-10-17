@@ -5,6 +5,7 @@ app.views.viewport = Backbone.View.extend({
 		app.utils.showDebug('initialize app.views.viewport');
 
 		this.on('ready', this.show, this);
+		this.on('contactAdded', this.test, this);
 
 		var self = this;
 		app.directory = new app.collections.contacts();
@@ -19,4 +20,7 @@ app.views.viewport = Backbone.View.extend({
 	show: function(){
 		new app.views.contactsList().render();
 	},
+	test: function(){
+		console.log('contact added');
+	}
 });
