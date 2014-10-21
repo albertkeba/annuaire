@@ -14,12 +14,12 @@ app.views.viewport = Backbone.View.extend({
 			success: function( models ){
 				self.trigger('ready');
 			}
-		});
+		}, {parse: true});
 
 		app.directory.on('contactAdded', this.test, this);
 	},
 	show: function(){
-		new app.views.contactsList().render();
+		new app.views.contactsList({collection: app.directory}).render();
 	},
 	test: function(){
 		console.log('contact added');
