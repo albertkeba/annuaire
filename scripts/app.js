@@ -6,6 +6,6 @@ var app = {
 	views		: {},
 	utils		: {},
 	config		: {
-		debug: false
+		debug: true
 	}
 };

@@ -10,10 +10,13 @@ app.views.contactsList = Backbone.View.extend({
 	render: function(){
 		var temp = '';
 
-		_.each(app.directory.toJSON(), function( model ){
+		_.each(this.collection.toJSON(), function( model ){
 			var t = new app.views.contact({model: model});
+			//temp += $(new app.views.contact({model: model}).render().el).html();
 			this.$el.append( new app.views.contact({model: model}).render().el  );
 		}, this);
+
+		//this.$el.append(temp);
 
 		return this;
 	},

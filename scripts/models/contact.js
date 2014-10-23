@@ -2,7 +2,7 @@ app.models.contact = Backbone.Model.extend({
 	defaults: {
 		firstname	: '',
 		lastname	: '',
-		managerid	: '',
+		managerId	: 0,
 		department	: '',
 		officePhone	: '',
 		email		: '',
@@ -14,7 +14,7 @@ app.models.contact = Backbone.Model.extend({
 		data.id			= response.id;
 		data.firstname	= response.firstName;
 		data.lastname	= response.lastName;
-		data.managerid	= response.managerid;
+		data.managerId	= parseInt( response.managerId );
 		data.department	= response.department;
 		data.officePhone= response.officePhone;
 		data.email		= response.email;

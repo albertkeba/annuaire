@@ -6,7 +6,15 @@ app.router = Backbone.Router.extend({
 		app.utils.showDebug('initialize app.router');
 	},
 	index: function(){
-		new app.views.viewport();
+		app.directory = new app.collections.contacts();
+		
+		app.directory.off('add');
+		app.directory.fetch({
+			success: function( collection ){
+				new app.views.contactsList({collection: collection}).render();
+			}
+		},{parse: true});
 		new app.views.form();
-	}
+	},
+
 });
