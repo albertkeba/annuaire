@@ -5,7 +5,8 @@ var app = {
 	collections	: {},
 	views		: {},
 	utils		: {},
+	_event		: _.extend({}, Backbone.Events),
 	config		: {
-		debug: true
+		debug: false
 	}
 };

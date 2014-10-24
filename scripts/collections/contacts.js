@@ -10,7 +10,6 @@ app.collections.contacts = Backbone.Collection.extend({
 		return this.where({managerId: managerId});
 	},
 	add: function( model ){
-		console.log('add col');
-		//this.trigger('contactAdded');//this.model );
+		app._event.trigger('addOne', model);
 	}
 });
