@@ -1,2 +1,8 @@
-.infos li {clear: both;}
-.infos label {display: block; width: 90px; float: left;}
+.infos li {clear: both; margin: 0; padding: 0;}
+.infos label {display: block; width: 78px; float: left; margin: 0; padding: 0;}
+.contact {font-size: 12px;}
+	.contact:hover {background-color: #E6F2FA; cursor: pointer;}
+a.remove:hover {color: red;}
+p.pull-right {margin: 0; padding: 0;}
+span.phone a {color: #000;}
+h3 {margin: 0; padding: 0; font-weight: bold; color: #0067CB; font-size: 14px;}

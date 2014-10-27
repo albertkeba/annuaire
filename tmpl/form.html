@@ -1,16 +1,59 @@
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" id="contactForm">
+	<input type="hidden" value="" id="contactid" name="contactid">
 	<div class="form-group">
-		<label for="lastname" class="col-sm-2 control-label">Nom:</label>
-		<div class="col-sm-10">
+		<label for="lastname" class="col-sm-4 control-label">Nom:</label>
+		<div class="col-sm-8">
 			<input type="text" class="form-control" id="lastname" name="lastname" />
 		</div>
 	</div><!-- lastname -->
 	<div class="form-group">
-		<label for="firstname" class="col-sm-2 control-label">Prénom:</label>
-		<div class="col-sm-10">
+		<label for="firstname" class="col-sm-4 control-label">Prénom:</label>
+		<div class="col-sm-8">
 			<input type="text" class="form-control" id="firstname" name="firstname" />
 		</div>
 	</div><!-- firstname -->
+	<div class="form-group">
+		<label for="title" class="col-sm-4 control-label">Titre:</label>
+		<div class="col-sm-8">
+			<select class="form-control" name="title" id="title">
+				<option></option>
+				<option value="Software Architect">Software Architect</option>
+				<option value="Sales Representative">Sales Representative</option>
+				<option value="Marketing">Marketing</option>
+				<option value="Marketing Manager">Marketing Manager</option>
+				<option value="Software Architect">Software Architect</option>
+				<option value="VP of Sales">VP of Sales</option>
+				<option value="QA Manager">QA Manager</option>
+				<option value="CFO">CFO</option>
+				<option value="VP of Engineering">VP of Engineering</option>
+				<option value="VP of Marketing">VP of Marketing</option>
+			</select>
+		</div>
+	</div><!-- title -->
+	<div class="form-group">
+		<label for="title" class="col-sm-4 control-label">Département:</label>
+		<div class="col-sm-8">
+			<select class="form-control" name="department" id="department">
+				<option></option>
+				<option value="Engineering">Engineering</option>
+				<option value="Sales">Sales</option>
+				<option value="Marketing">Marketing</option>
+				<option value="Accounting">Accounting</option>
+			</select>
+		</div>
+	</div><!-- department -->
+	<div class="form-group">
+		<label for="phone" class="col-sm-4 control-label">Téléphone:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" id="officePhone" name="officePhone" />
+		</div>
+	</div><!-- phone -->
+	<div class="form-group">
+		<label for="phone" class="col-sm-4 control-label">Courriel:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" id="email" name="email" />
+		</div>
+	</div><!-- email -->
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
 			<button type="submit" id="btn-add-contact" class="btn btn-default">Soumettre</button>

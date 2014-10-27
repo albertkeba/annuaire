@@ -6,6 +6,7 @@ app.views.contactsList = Backbone.View.extend({
 		options || (options={})
 
 		app._event.on('addOne', this.addOne, this);
+		app._event.on('refreshOne', this.refreshOne, this);
 	},
 	render: function(){
 		var temp = '';
@@ -22,5 +23,8 @@ app.views.contactsList = Backbone.View.extend({
 	},
 	addOne: function( model ){
 		this.$el.append( new app.views.contact({model: model.toJSON()}).render().el );
+	},
+	refreshOne: function( model ){
+		console.log('refreshOne', model);
 	}
 });

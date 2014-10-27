@@ -1,11 +1,17 @@
-<h3>{{firstname}} {{lastname}}</h3>
+<h3 class="pull-left">{{firstname}} {{lastname}}</h3>
+<p class="pull-right">
+	<a href="" class="edit"><span class="glyphicon glyphicon-pencil"></span></a>
+	<a href="" class="remove"><span class="glyphicon glyphicon-remove"></span></a>
+</p>
 <div class="infos">
 	<ul>
 		<li>
 			<label>Département</label>: <span>{{department}}</span>
 		</li>
 		<li>
-			<label>Téléphone</label>: <span>{{officePhone}}</span>
+			<label>
+				<span class="glyphicon glyphicon-earphone"></span>Téléphone
+			</label>: <span class="phone"><a href="tel:{{officePhone}}">{{officePhone}}</a></span>
 		</li>
 	</ul>
 </div>
