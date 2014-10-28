@@ -5,19 +5,18 @@ app.views.contactsList = Backbone.View.extend({
 
 		options || (options={})
 
+		this._itemViews = {};
 		app._event.on('addOne', this.addOne, this);
 		app._event.on('refreshOne', this.refreshOne, this);
 	},
 	render: function(){
-		var temp = '';
+		var self = this;
 
 		_.each(this.collection.toJSON(), function( model ){
-			var t = new app.views.contact({model: model});
-			//temp += $(new app.views.contact({model: model}).render().el).html();
-			this.$el.append( new app.views.contact({model: model}).render().el  );
+			self._itemViews[ model.id ] = new app.views.contact({model: model});
+		
+			this.$el.append( self._itemViews[ model.id ].render().el  );
 		}, this);
-
-		//this.$el.append(temp);
 
 		return this;
 	},
@@ -25,6 +24,7 @@ app.views.contactsList = Backbone.View.extend({
 		this.$el.append( new app.views.contact({model: model.toJSON()}).render().el );
 	},
 	refreshOne: function( model ){
-		console.log('refreshOne', model);
+		this._itemViews[ model.id ].model = model.attributes;
+		this._itemViews[ model.id ].render().el;
 	}
 });

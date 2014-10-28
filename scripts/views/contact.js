@@ -8,7 +8,7 @@ app.views.contact = Backbone.View.extend({
 	initialize: function(){
 		//app.utils.showDebug('initialize app.views.contact');
 		this.template = app.utils.templateLoader.get('contact');
-		//app._event.on('addOne', this.addOne, this);
+		var i = 1;
 	},
 	render: function(){
 		this.$el.html( Mustache.render( this.template, this.model ) );
@@ -25,8 +25,6 @@ app.views.contact = Backbone.View.extend({
 			$form.find('#officePhone').val( this.model.officePhone );
 			$form.find('#email').val( this.model.email );
 			$form.find('#contactid').val( this.model.id );
-
-			this.render();
 	},
 	remove: function( e ){
 		e.preventDefault();

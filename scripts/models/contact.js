@@ -24,5 +24,11 @@ app.models.contact = Backbone.Model.extend({
 		data.picture	= response.picture;
 		
 		return data;
+	},
+	initialize: function(){
+		this.on('change', this.change, this);
+	},
+	change: function( model ){
+		app._event.trigger('refreshOne', model);
 	}
 });
